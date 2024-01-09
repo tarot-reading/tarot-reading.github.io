@@ -134,7 +134,9 @@
 
 
         h2 {
-            margin-top: 5px;
+    margin-top: -30px;
+    font-size: 15px;
+    margin-right: -6px;
         }
 
         .card p {
@@ -309,12 +311,12 @@
 
         @media screen and (max-width: 600px) {
             h1 {
-                font-size: 30px
+                font-size: 40px
             }
 
             #disappearingText h1 {
-                font-size: 20px;
-                margin-top: 50px;
+                font-size: 30px;
+                margin-top: 100px;
             }
 
             #disappearingText p {
@@ -329,9 +331,9 @@
 
             .card {
                 border: 1px solid #ccc;
-                padding: 20px;
-                margin: 0 5%;
-                width: 30px;
+                padding: 36px;
+                margin: 0 1%;
+                width: 36px;
                 height: 100px;
                 display: inline-block;
                 display: none;
@@ -340,16 +342,10 @@
                 border-radius: 8px;
                 position: relative;
                 vertical-align: top;
+                text-size-adjust: 20;
             }
 
-            .card p {
-                font-size: 10px;
-                margin-top: 5px;
-                position: absolute;
-                bottom: 5px;
-                left: 0;
-                right: 0;
-            }
+            
 
 
             #disappearingText.hidden {
@@ -368,25 +364,26 @@
 
 
 
-
-
-            img {
-                max-width: 110%;
+            img { 
+                max-width: 150%;
                 /* Adjusted to 100% to fit the increased card size */
                 max-height: 140%;
                 /* Adjusted to 100% to fit the increased card size */
                 border-radius: 2px;
+                
             }
 
 
 
             h2 {
-                margin-top: 5px;
+                margin-top: -19px;
+                font-size: 10px;
+                margin-right: -19px ;
             }
 
             .card p {
-                font-size: 9px;
-                margin-top: 5px;
+                font-size: 10px;
+                margin-top: 1px;
                 position: absolute;
                 bottom: 2px;
                 left: 0;
@@ -394,8 +391,8 @@
             }
 
 
-            #cardContainer {
-                font-size: 20px;
+            #cardContainer { margin-top: 1px;
+                font-size: 50px;
             }
 
             .Decktxt {
@@ -419,7 +416,8 @@
 
             #cardDeck li {
                 display: inline-block;
-                margin-right: -11px;
+                margin-left: -10px;
+         margin-right: 5px;
                 /* Adjust the negative margin for overlap */
 
             }
@@ -427,14 +425,14 @@
             #cardDeck li img {
                 max-width: inherit;
                 top: 0;
-                width: 19px;
+                width: 29px;
                 position: relative;
 
             }
 
             .Decktxt {
-                margin-top: 10px;
-                font-size: 20px;
+                margin-top: 40px;
+                font-size: 40px;
                 transition: opacity 60s ease;
                 /* Add opacity transition */
                 background: url('giphy (1)eererer.gif');
