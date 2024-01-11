@@ -837,31 +837,7 @@
 
         // Asynchrone functie om een API-aanvraag naar de tarot-API te maken
         async function makeTarotAPIRequest(cardnumbers) {
-            return (
-                {
-                    "id": "chatcmpl-8fm1yRUWMOhyahNoUMtbq2hFWdPZ1",
-                    "object": "chat.completion",
-                    "created": 1704966770,
-                    "model": "gpt-4-0613",
-                    "choices": [
-                        {
-                            "index": 0,
-                            "message": {
-                                "role": "assistant",
-                                "content": "De Magiër, de Dood, de Maan, deze kaarten vertellen een fascinerend verhaal. De Magiër symboliseert vaardigheid, inzet en initiatief. Het kan aangeven dat je in een periode van je leven bent waarin je nieuwe dingen wilt beginnen of nieuwe vaardigheden wilt leren. De Dood daarentegen, moet niet letterlijk worden genomen. Het betekent het einde van een cyclus en het begin van iets anders. Het geeft plotselinge, onvermijdelijke veranderingen aan. Tenslotte, de Maan, die dromen, illusies en het onbewuste vertegenwoordigt. Het suggereert dat je misschien niet het volledige beeld ziet in een bepaalde situatie of dat je te maken hebt met onzekerheid. Zo, het pad van verandering en onzekerheid ligt voor je, geleid door de ambities van de Magiër."
-                            },
-                            "logprobs": null,
-                            "finish_reason": "stop"
-                        }
-                    ],
-                    "usage": {
-                        "prompt_tokens": 57,
-                        "completion_tokens": 224,
-                        "total_tokens": 281
-                    },
-                    "system_fingerprint": null
-                });
-
+          
             // Opstellen van parameters voor de API-aanvraag
             let parameters = `cards=${cardnumbers}&lang=nl`;
             let url = 'https://roads-technology.nl/gpt/rt-tarot-api.php?' + parameters;
