@@ -9,6 +9,7 @@
 
 
     <style>
+        /* Algemene stijl voor de hele pagina */
         body {
             font-family: 'Candy Lito', sans-serif;
             text-align: center;
@@ -17,74 +18,60 @@
             background: white;
             color: black;
             overflow: hidden;
-            /* Keep overflow hidden to prevent scrollbars */
         }
 
-
-
+        /* Stijl voor het verdwijnende tekstgebied met een h1-titel */
         #disappearingText h1 {
             font-size: 40px;
             transition: opacity 60s ease;
-            /* Add opacity transition */
             background: url('giphy (1)eererer.gif');
-            /* Replace 'giphy.gif' with the actual path to your gif */
             background-size: 10%;
             background-color: rgba(255, 255, 255, 0.55);
-            /* Adjust the color and opacity as needed */
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
             animation: gradientAnimation 120s linear infinite;
-            /* Adjust the duration as needed */
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             margin-top: 150px;
         }
 
-
+        /* Stijl voor het verdwijnende tekstgebied met een p-element */
         #disappearingText p {
             font-size: 30px;
             transition: opacity 0s ease;
-            /* Add opacity transition */
             background: url('weqweqweqweqwqe.gif');
-            /* Replace 'giphy.gif' with the actual path to your gif */
             background-size: 15%;
-            /* Adjust the zoom level */
             background-color: rgba(255, 255, 255, 0.55);
-            /* Adjust the color and opacity as needed */
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
             animation: gradientAnimation 240s linear infinite;
-            /* Adjust the duration as needed */
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             border: 5px solid #000;
             border-image: url('stars.gif');
-    border-image-slice: 1% 1% 1% 1%;
-    border-image-width: 5px; /* Adjust the width as needed */
-          /* Adjust the color and width as needed */
+            border-image-slice: 1% 1% 1% 1%;
+            border-image-width: 5px;
             border-radius: 5px;
-            /* Adjust the border radius as needed */
             padding: 20px;
-            /* Adjust the padding as needed */
             margin-left: 500px;
             margin-right: 500px;
             margin-top: 1px;
             display: inline-block;
         }
 
-
+        /* Verberg het tekstgebied als het de klasse 'hidden' heeft */
         #disappearingText.hidden {
             opacity: 0;
-            /* Set opacity to 0 for hidden state */
         }
 
+        /* Stijl voor de kaartcontainer */
         .card-container {
             font-size: 20px;
             margin-top: 15px;
             position: relative;
-            /* Add position: relative */
         }
 
+        /* Stijl voor individuele kaarten */
         .card {
             border: 1px solid #ccc;
             padding: 20px;
@@ -98,47 +85,38 @@
             border-radius: 8px;
             position: relative;
             vertical-align: top;
-            /* Add vertical-align: top */
         }
 
-        /* Rest of your CSS remains unchanged */
-
-
-
+        /* Stijl voor afbeeldingen binnen kaarten */
         img {
             max-width: 85%;
-            /* Adjusted to 100% to fit the increased card size */
             max-height: 70%;
-            /* Adjusted to 100% to fit the increased card size */
             border-radius: 8px;
         }
 
+        /* Stijl voor h1-titels */
         h1 {
             font-size: 60px;
             margin-top: 5px;
             transition: opacity 60s ease;
-            /* Add opacity transition */
             background: url('giphy (1)eererer.gif');
-            /* Replace 'giphy.gif' with the actual path to your gif */
             background-size: 10%;
             background-color: rgba(255, 255, 255, 0.55);
-            /* Adjust the color and opacity as needed */
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
             animation: gradientAnimation 120s linear infinite;
-            /* Adjust the duration as needed */
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
         }
 
-
-
+        /* Stijl voor h2-titels */
         h2 {
-    margin-top: -30px;
-    font-size: 15px;
-    margin-right: -6px;
+            margin-top: -7px;
+            font-size: 22px;
+            margin-right: -6px;
         }
 
+        /* Stijl voor p-elementen binnen kaarten */
         .card p {
             font-size: 20px;
             margin-top: 5px;
@@ -148,16 +126,9 @@
             right: 0;
         }
 
-
-        #cardContainer {
-            font-size: 20px;
-
-        }
-
-        /* Sterrenachtergrondanimatie */
+        /* Stijl voor de achtergrond met sterren */
         .stars {
             position: fixed;
-            /* Change to fixed for full viewport coverage */
             top: 0;
             left: 0;
             width: 100%;
@@ -168,6 +139,7 @@
             animation: animateStars 50s linear infinite;
         }
 
+        /* Animatie voor de bewegende sterrenachtergrond */
         @keyframes animateStars {
             from {
                 background-position: 0 0;
@@ -178,6 +150,7 @@
             }
         }
 
+        /* Stijl voor de achterkant van een kaart */
         .card .back {
             position: absolute;
             top: 0;
@@ -186,7 +159,6 @@
             height: 100%;
             background-image: url('Backside of a Tarot card.jpg');
             background-size: 100% 100%;
-            /* Adjusted to cover the entire background */
             background-position: center;
             display: flex;
             align-items: center;
@@ -194,17 +166,15 @@
             transform: rotateY(0deg);
             backface-visibility: hidden;
             transition: transform 1s ease-in-out 2s;
-            /* Voeg een vertraging van 2 seconden toe voordat de animatie begint */
         }
 
-
-
-
+        /* Animatie voor het omdraaien van een kaart bij onthulling */
         .card.reveal .back {
             transform: rotateY(180deg);
             animation: flipAnimation 2s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
         }
 
+        /* Keyframes voor de flip-animatie */
         @keyframes flipAnimation {
             0% {
                 transform: rotateY(0deg);
@@ -231,12 +201,13 @@
             }
         }
 
+        /* Animatie voor het onthullen van een kaart */
         .card.reveal {
             transform: translateY(0);
-            /* Ensure no translateY during reveal */
             animation: revealAnimation 2s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
         }
 
+        /* Keyframes voor de onthullingsanimatie */
         @keyframes revealAnimation {
             0% {
                 opacity: 0;
@@ -254,48 +225,39 @@
             }
         }
 
-
-
+        /* Stijl voor de lijst met kaartafbeeldingen */
         #cardDeck li img {
             max-width: inherit;
             top: 0;
             width: 80px;
             position: relative;
-
         }
 
+        /* Stijl voor individuele lijstitems met kaartafbeeldingen */
         #cardDeck li {
             display: inline-block;
             margin-right: -20px;
-            /* Adjust the negative margin for overlap */
-
         }
 
-
-
-
+        /* Stijl voor het tekstgebied met een klasse 'Decktxt' */
         .Decktxt {
             margin-top: 40px;
             font-size: 40px;
             transition: opacity 60s ease;
-            /* Add opacity transition */
             background: url('giphy (1)eererer.gif');
-            /* Replace 'giphy.gif' with the actual path to your gif */
             background-size: 10%;
             background-color: rgba(255, 255, 255, 0.55);
-            /* Adjust the color and opacity as needed */
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
             animation: gradientAnimation 120s linear infinite;
-            /* Adjust the duration as needed */
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
         }
 
+        /* Stijl voor het tekstgebied met een klasse 'readingText' */
         .readingText {
             font-size: 60px;
             margin-top: -20px;
-            /* Adjust this value to move the text higher or lower */
             transition: opacity 70s ease;
             background: url('fdsdsfdsdsf.gif');
             background-size: cover;
@@ -307,8 +269,38 @@
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
         }
 
+        /* Stijl voor de knop met de id 'myButton' */
+        #myButton {
+            font-family: 'Candy Lito', sans-serif;
+            display: none;
+            color: black;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px auto;
+            background: url('weqweqweqweqwqe.gif');
+            background-size: 15%;
+            background-color: rgba(255, 255, 255, 0.55);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradientAnimation 240s linear infinite;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            border: 5px solid #000;
+            border-image: url('stars.gif');
+            border-image-slice: 1% 1% 1% 1%;
+            border-image-width: 5px;
+        }
 
+        /* Stijl voor de knop bij hover */
+        #myButton:hover {
+            background: url('weqweqweqweqwqe.gif');
+            color: white;
+        }
 
+        /* Media query voor schermen kleiner dan 600px breed */
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 40px
@@ -325,13 +317,21 @@
                 margin-right: 2%;
                 border: 1px solid #000;
                 border-image: url('stars.gif');
-                border-image-slice: 100; /* Adjust the slicing as needed */
-    border-image-width: 5px; /* Adjust the width as needed */
+                border-image-slice: 100;
+                border-image-width: 5px;
+            }
+
+            /* Aanpassingen voor afbeeldingen binnen kaarten bij kleinere schermen */
+            #pastCard img,
+            #presentCard img,
+            #futureCard img {
+                margin-left: -15px;
+                margin-top: -10px;
             }
 
             .card {
                 border: 1px solid #ccc;
-                padding: 36px;
+                padding: 28px;
                 margin: 0 1%;
                 width: 36px;
                 height: 100px;
@@ -343,42 +343,39 @@
                 position: relative;
                 vertical-align: top;
                 text-size-adjust: 20;
+
             }
 
-            
+
 
 
             #disappearingText.hidden {
                 opacity: 0;
-                /* Set opacity to 0 for hidden state */
             }
 
             .card-container {
                 font-size: 10px;
                 margin-top: 15px;
                 position: relative;
-                /* Add position: relative */
             }
 
 
 
 
 
-            img { 
-                max-width: 150%;
-                /* Adjusted to 100% to fit the increased card size */
+            img {
+                max-width: 190%;
                 max-height: 140%;
-                /* Adjusted to 100% to fit the increased card size */
                 border-radius: 2px;
-                
+                margin-right: -4px;
             }
 
 
 
             h2 {
-                margin-top: -19px;
+                margin-top: -25px;
                 font-size: 10px;
-                margin-right: -19px ;
+                margin-right: -4px;
             }
 
             .card p {
@@ -391,7 +388,8 @@
             }
 
 
-            #cardContainer { margin-top: 1px;
+            #cardContainer {
+                margin-top: 1px;
                 font-size: 50px;
             }
 
@@ -399,17 +397,13 @@
                 margin-top: 40px;
                 font-size: 40px;
                 transition: opacity 60s ease;
-                /* Add opacity transition */
                 background: url('giphy (1)eererer.gif');
-                /* Replace 'giphy.gif' with the actual path to your gif */
                 background-size: 10%;
                 background-color: rgba(255, 255, 255, 0.55);
-                /* Adjust the color and opacity as needed */
                 color: transparent;
                 -webkit-background-clip: text;
                 background-clip: text;
                 animation: gradientAnimation 120s linear infinite;
-                /* Adjust the duration as needed */
                 text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             }
 
@@ -417,41 +411,36 @@
             #cardDeck li {
                 display: inline-block;
                 margin-left: -10px;
-         margin-right: 5px;
-                /* Adjust the negative margin for overlap */
+                margin-right: 5px;
 
             }
 
             #cardDeck li img {
                 max-width: inherit;
                 top: 0;
-                width: 29px;
+                width: 33px;
                 position: relative;
+                margin-left: -13px;
 
             }
 
             .Decktxt {
                 margin-top: 40px;
-                font-size: 40px;
+                font-size: 35px;
                 transition: opacity 60s ease;
-                /* Add opacity transition */
                 background: url('giphy (1)eererer.gif');
-                /* Replace 'giphy.gif' with the actual path to your gif */
                 background-size: 10%;
                 background-color: rgba(255, 255, 255, 0.55);
-                /* Adjust the color and opacity as needed */
                 color: transparent;
                 -webkit-background-clip: text;
                 background-clip: text;
                 animation: gradientAnimation 120s linear infinite;
-                /* Adjust the duration as needed */
                 text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             }
 
             .readingText {
                 font-size: 60px;
-                margin-top: -20px;
-                /* Adjust this value to move the text higher or lower */
+                margin-top: 20px;
                 transition: opacity 70s ease;
                 background: url('fdsdsfdsdsf.gif');
                 background-size: cover;
@@ -463,32 +452,23 @@
                 text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             }
 
-            .readingText {
-                font-size: 10px;
-                margin-top: -20px;
-                /* Adjust this value to move the text higher or lower */
-                transition: opacity 70s ease;
-                background: url('fdsdsfdsdsf.gif');
-                background-size: cover;
-                background-color: rgba(255, 255, 255, 0.55);
-                color: transparent;
-                -webkit-background-clip: text;
-                background-clip: text;
-                animation: gradientAnimation 120s linear infinite;
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+
+            #myButton {
+                font-size: 13px;
             }
 
 
         }
     </style>
+
 </head>
 
 <body>
-
+    <!--titel-->
     <h1>Duik in de betoverende wereld van tarotlezingen!!!</h1>
 
 
-
+    <!--achtergrond afbeelding-->
     <div class="stars"></div>
 
     <div class="card-container">
@@ -533,6 +513,12 @@
                 </div>
             </div>
         </div>
+        <div id="readingText"></div>
+        <button id="myButton" style="display: none;" onclick="location.reload()"
+            onmouseover="this.innerHTML='Oh, lijkt erop dat de tarotkaarten een eigen script schreven voor mijn leven! Misschien hebben ze iets te veel fantasie. Ik dacht altijd dat ik mijn eigen verhaal schreef, maar blijkbaar hebben de kaarten hun eigen ideeën. Tijd voor een reality check en een knipoog naar het universum: ik ben nog steeds de regisseur van mijn eigen avontuur! Klik op mij en laat het universum een herkansing nemen. Misschien hebben we wat extra sterrenstof nodig voor een betere communicatie met de kosmos. Klaar voor ronde twee? '"
+            onmouseout="this.innerHTML='ben je het niet eens met de kaarten? Hover je muis op MIJ!'">ben je het niet
+            eens met de kaarten? Hover je muis op MIJ!</button>
+
         <div id="disappearingText">
             <h1>Nog voor je de kaarten laat spreken!</h1>
             <p>Neem een moment om je gedachten te bundelen rond een specifieke
@@ -540,261 +526,260 @@
                 blik gunnen op wat de
                 toekomst voor jou in petto heeft. Zo trotseer je de komende dagen met extra sereniteit en mysterie!</p>
         </div>
+
         <div class="card-selection">
             <h2 class="Decktxt">Kies 3 kaarten uit het deck:</h2>
             <ul id="cardDeck">
-                <!-- Repeat for all 22 cards -->
-                <!-- Card 1 -->
-                <!-- Replace your existing HTML for each card with the following -->
 
-                <!-- Card 1 -->
-                <li id="card1" data-rank="1"><a href="#" onclick="revealSelectedCard('card1', 0); return false;"><img
+
+                <!-- Kaart 1 -->
+                <li id="card0" data-rank="0"><a href="#" onclick="revealSelectedCard('card0', 0); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Een nieuw begin"></a></li>
 
-                <!-- Card 2 -->
-                <li id="card2" data-rank="2"><a href="#" onclick="revealSelectedCard('card2', 1); return false;"><img
+                <!-- Kaart 2 -->
+                <li id="card1" data-rank="1"><a href="#" onclick="revealSelectedCard('card1', 1); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Manifestatie"></a></li>
 
-                <!-- Card 3 -->
-                <li id="card3" data-rank="3"><a href="#" onclick="revealSelectedCard('card3', 2); return false;"><img
+                <!-- Kaart 3 -->
+                <li id="card2" data-rank="2"><a href="#" onclick="revealSelectedCard('card2', 2); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Intuïtie en mysterie"></a></li>
 
-                <!-- Card 4 -->
-                <li id="card4" data-rank="4"><a href="#" onclick="revealSelectedCard('card4', 3); return false;"><img
+                <!-- Kaart 4 -->
+                <li id="card3" data-rank="3"><a href="#" onclick="revealSelectedCard('card3', 3); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Voeding en overvloed"></a></li>
 
-                <!-- Card 5 -->
-                <li id="card5" data-rank="5"><a href="#" onclick="revealSelectedCard('card5', 4); return false;"><img
+                <!-- Kaart 5 -->
+                <li id="card4" data-rank="4"><a href="#" onclick="revealSelectedCard('card4', 4); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Autoriteit en structuur"></a></li>
 
-                <!-- Card 6 -->
-                <li id="card6" data-rank="6"><a href="#" onclick="revealSelectedCard('card6', 5); return false;"><img
+                <!-- Kaart 6 -->
+                <li id="card5" data-rank="5"><a href="#" onclick="revealSelectedCard('card5', 5); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Traditie en spirituele begeleiding"></a></li>
 
-                <!-- Card 7 -->
-                <li id="card7" data-rank="7"><a href="#" onclick="revealSelectedCard('card7', 6); return false;"><img
+                <!-- Kaart 7 -->
+                <li id="card6" data-rank="6"><a href="#" onclick="revealSelectedCard('card6', 6); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Liefde en partnerschap"></a></li>
 
-                <!-- Card 8 -->
-                <li id="card8" data-rank="8"><a href="#" onclick="revealSelectedCard('card8', 7); return false;"><img
+                <!-- Kaart 8 -->
+                <li id="card7" data-rank="7"><a href="#" onclick="revealSelectedCard('card7', 7); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Controle en vastberadenheid"></a></li>
 
-                <!-- Card 9 -->
-                <li id="card9" data-rank="9"><a href="#" onclick="revealSelectedCard('card9', 8); return false;"><img
+                <!-- Kaart 9 -->
+                <li id="card8" data-rank="8"><a href="#" onclick="revealSelectedCard('card8', 8); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Innerlijke kracht en moed"></a></li>
 
-                <!-- Card 10 -->
-                <li id="card10" data-rank="10"><a href="#" onclick="revealSelectedCard('card10', 9); return false;"><img
+                <!-- Kaart 10 -->
+                <li id="card9" data-rank="9"><a href="#" onclick="revealSelectedCard('card9', 9); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Afzondering en zelfreflectie"></a></li>
 
-                <!-- Card 11 -->
-                <li id="card11" data-rank="11"><a href="#"
-                        onclick="revealSelectedCard('card11', 10); return false;"><img
+                <!-- Kaart 11 -->
+                <li id="card10" data-rank="10"><a href="#"
+                        onclick="revealSelectedCard('card10', 10); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Cycli en lotsbestemming"></a></li>
 
-                <!-- Card 12 -->
-                <li id="card12" data-rank="12"><a href="#"
-                        onclick="revealSelectedCard('card12', 11); return false;"><img
+                <!-- Kaart 12 -->
+                <li id="card11" data-rank="11"><a href="#"
+                        onclick="revealSelectedCard('card11', 11); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Rechtvaardigheid en balans"></a></li>
 
-                <!-- Card 13 -->
-                <li id="card13" data-rank="13"><a href="#"
-                        onclick="revealSelectedCard('card13', 12); return false;"><img
+                <!-- Kaart 13 -->
+                <li id="card12" data-rank="12"><a href="#"
+                        onclick="revealSelectedCard('card12', 12); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Offer en overgave"></a></li>
 
-                <!-- Card 14 -->
-                <li id="card14" data-rank="14"><a href="#"
-                        onclick="revealSelectedCard('card14', 13); return false;"><img
+                <!-- Kaart 14 -->
+                <li id="card13" data-rank="13"><a href="#"
+                        onclick="revealSelectedCard('card13', 13); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Transformatie en wedergeboorte"></a></li>
 
-                <!-- Card 15 -->
-                <li id="card15" data-rank="15"><a href="#"
-                        onclick="revealSelectedCard('card15', 14); return false;"><img
+                <!-- Kaart 15 -->
+                <li id="card14" data-rank="14"><a href="#"
+                        onclick="revealSelectedCard('card14', 14); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Balans en matiging"></a></li>
 
-                <!-- Card 16 -->
-                <li id="card16" data-rank="16"><a href="#"
-                        onclick="revealSelectedCard('card16', 15); return false;"><img
+                <!-- Kaart 16 -->
+                <li id="card15" data-rank="15"><a href="#"
+                        onclick="revealSelectedCard('card15', 15); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Materialisme en Illusies"></a></li>
 
-                <!-- Card 17 -->
-                <li id="card17" data-rank="17"><a href="#"
-                        onclick="revealSelectedCard('card17', 16); return false;"><img
+                <!-- Kaart 17 -->
+                <li id="card16" data-rank="16"><a href="#"
+                        onclick="revealSelectedCard('card16', 16); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Vernietiging en openbaring"></a></li>
 
-                <!-- Card 18 -->
-                <li id="card18" data-rank="18"><a href="#"
-                        onclick="revealSelectedCard('card18', 17); return false;"><img
+                <!-- Kaart 18 -->
+                <li id="card17" data-rank="17"><a href="#"
+                        onclick="revealSelectedCard('card17', 17); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Hoop en inspiratie"></a></li>
 
-                <!-- Card 19 -->
-                <li id="card19" data-rank="19"><a href="#"
-                        onclick="revealSelectedCard('card19', 18); return false;"><img
+                <!-- Kaart 19 -->
+                <li id="card18" data-rank="18"><a href="#"
+                        onclick="revealSelectedCard('card18', 18); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Intuïtie en onzekerheid"></a></li>
 
-                <!-- Card 20 -->
-                <li id="card20" data-rank="20"><a href="#"
-                        onclick="revealSelectedCard('card20', 19); return false;"><img
+                <!-- Kaart 20 -->
+                <li id="card19" data-rank="19"><a href="#"
+                        onclick="revealSelectedCard('card19', 19); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Vreugde en succes"></a></li>
 
-                <!-- Card 21 -->
-                <li id="card21" data-rank="21"><a href="#"
-                        onclick="revealSelectedCard('card21', 20); return false;"><img
+                <!-- Kaart 21 -->
+                <li id="card20" data-rank="20"><a href="#"
+                        onclick="revealSelectedCard('card20', 20); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Wedergeboorte en ontwaking"></a></li>
 
-                <!-- Card 22 -->
-                <li id="card22" data-rank="22"><a href="#"
-                        onclick="revealSelectedCard('card22', 21); return false;"><img
+                <!-- Kaart 22 -->
+                <li id="card21" data-rank="21"><a href="#"
+                        onclick="revealSelectedCard('card21', 21); return false;"><img
                             src="Backside of a Tarot card.jpg" alt="Voltooiing en vervulling"></a></li>
 
-            </ul>
-            <form class="send-form" method="POST" action="choose-cards.php">
-                <!-- Hidden input fields to store selected cards -->
-                <input type="hidden" name="card-1">
-                <input type="hidden" name="card-2">
-                <input type="hidden" name="card-3">
-                <input type="hidden" name="card-4">
-                <input type="hidden" name="card-5">
-                <input type="hidden" name="card-6">
-                <input type="hidden" name="card-7">
-                <input type="hidden" name="card-8">
-                <input type="hidden" name="card-9">
-                <input type="hidden" name="card-10">
-                <input type="hidden" name="card-11">
-                <input type="hidden" name="card-12">
-                <input type="hidden" name="card-13">
-                <input type="hidden" name="card-14">
-                <input type="hidden" name="card-15">
-                <input type="hidden" name="card-16">
-                <input type="hidden" name="card-17">
-                <input type="hidden" name="card-18">
-                <input type="hidden" name="card-19">
-                <input type="hidden" name="card-20">
-                <input type="hidden" name="card-21">
-                <input type="hidden" name="card-22">
-            </form>
 
-            <div id="readingText"></div>
+                <form class="send-form" method="POST" action="choose-cards.php">
+                    <!-- Verborgen invoervelden om geselecteerde kaarten op te slaan -->
+                    <input type="hidden" name="card-0">
+                    <input type="hidden" name="card-1">
+                    <input type="hidden" name="card-2">
+                    <input type="hidden" name="card-3">
+                    <input type="hidden" name="card-4">
+                    <input type="hidden" name="card-5">
+                    <input type="hidden" name="card-6">
+                    <input type="hidden" name="card-7">
+                    <input type="hidden" name="card-8">
+                    <input type="hidden" name="card-9">
+                    <input type="hidden" name="card-10">
+                    <input type="hidden" name="card-11">
+                    <input type="hidden" name="card-12">
+                    <input type="hidden" name="card-13">
+                    <input type="hidden" name="card-14">
+                    <input type="hidden" name="card-15">
+                    <input type="hidden" name="card-16">
+                    <input type="hidden" name="card-17">
+                    <input type="hidden" name="card-18">
+                    <input type="hidden" name="card-19">
+                    <input type="hidden" name="card-20">
+                    <input type="hidden" name="card-21">
+                </form>
 
         </div>
 
+        <!-- Voeg deze knop toe aan je HTML -->
+        <button id="myButton" style="display: none;" onclick="location.reload()">Klik hier</button>
+
+
+        </form>
+
+
+
+    </div>
+
+
+    <button id="myButton" style="display: none;" onclick="location.reload()">Click me</button>
 
 
 
     </div>
 
     <script>
+
+        // Functie om tekst te verbergen en geselecteerde kaarten te onthullen
         function hideAndReveal() {
             hideText();
             revealCards();
         }
 
+        // Functie om tekst te verbergen
         function hideText() {
             var disappearingText = document.getElementById('disappearingText');
             disappearingText.classList.add('hidden');
         }
 
-
+        // Array met de belangrijkste Arcana-kaarten en hun beschrijvingen
         var majorArcanaCards = [
-            { image: "1", description: "Een nieuw begin" },
-            { image: "2", description: "Manifestatie" },
-            { image: "3", description: "Intuïtie en mysterie" },
-            { image: "4", description: "Voeding en overvloed" },
-            { image: "5", description: "Autoriteit en structuur" },
-            { image: "6", description: "Traditie en spirituele begeleiding" },
-            { image: "7", description: "Liefde en partnerschap" },
-            { image: "8", description: "Controle en vastberadenheid" },
-            { image: "9", description: "Innerlijke kracht en moed" },
-            { image: "10", description: "Afzondering en zelfreflectie" },
-            { image: "11", description: "Cycli en lotsbestemming" },
-            { image: "12", description: "Rechtvaardigheid en balans" },
-            { image: "13", description: "Offer en overgave" },
-            { image: "14", description: "Transformatie en wedergeboorte" },
-            { image: "15", description: "Balans en matiging" },
-            { image: "16", description: "Materialisme en Illusies" },
-            { image: "17", description: "Vernietiging en openbaring" },
-            { image: "18", description: "Hoop en inspiratie" },
-            { image: "19", description: "Intuïtie en onzekerheid" },
-            { image: "20", description: "Vreugde en succes" },
-            { image: "21", description: "Wedergeboorte en ontwaking" },
-            { image: "22", description: "Voltooiing en vervulling" }
+            { cardnr: "tarotcard0", description: "Een nieuw begin" },
+            { cardnr: "tarotcard1", description: "Manifestatie" },
+            { cardnr: "tarotcard2", description: "Intuïtie en mysterie" },
+            { cardnr: "tarotcard3", description: "Voeding en overvloed" },
+            { cardnr: "tarotcard4", description: "Autoriteit en structuur" },
+            { cardnr: "tarotcard5", description: "Traditie en spirituele begeleiding" },
+            { cardnr: "tarotcard6", description: "Liefde en partnerschap" },
+            { cardnr: "tarotcard7", description: "Controle en vastberadenheid" },
+            { cardnr: "tarotcard8", description: "Innerlijke kracht en moed" },
+            { cardnr: "tarotcard9", description: "Afzondering en zelfreflectie" },
+            { cardnr: "tarotcard10", description: "Cycli en lotsbestemming" },
+            { cardnr: "tarotcard11", description: "Rechtvaardigheid en balans" },
+            { cardnr: "tarotcard12", description: "Offer en overgave" },
+            { cardnr: "tarotcard13", description: "Transformatie en wedergeboorte" },
+            { cardnr: "tarotcard14", description: "Balans en matiging" },
+            { cardnr: "tarotcard15", description: "Materialisme en Illusies" },
+            { cardnr: "tarotcard16", description: "Vernietiging en openbaring" },
+            { cardnr: "tarotcard17", description: "Hoop en inspiratie" },
+            { cardnr: "tarotcard18", description: "Intuïtie en onzekerheid" },
+            { cardnr: "tarotcard19", description: "Vreugde en succes" },
+            { cardnr: "tarotcard20", description: "Wedergeboorte en ontwaking" },
+            { cardnr: "tarotcard21", description: "Voltooiing en vervulling" }
 
         ];
 
-        var selectedCardCount = 0;
 
-        // ... (existing code)
-
-        // Declare a variable to keep track of clicked cards count
+        // Variabele om het aantal geklikte kaarten bij te houden
         var clickedCardCount = 0;
 
-        // ... (existing code)
-
-        // Declare a variable to keep track of clicked cards count
-        var clickedCardCount = 0;
-
-
-        // Declare a variable to keep track of clicked cards count
-        var clickedCardCount = 0;
-
-
+        // Functie om de geselecteerde kaart te onthullen en animatie toe te passen
         function revealSelectedCard(cardId, index) {
             hideText();
 
-            // Reference to the card element
+
             var card = document.getElementById(cardId);
 
-            // Apply translation animation to move the card a bit
+            // Voeg een transformatie toe voor visuele flair
             card.style.transition = 'transform ease-in-out';
-            card.style.transform = 'translateY(-15px)'; // Adjust the translation distance as needed
+            card.style.transform = 'translateY(-15px)';
 
-            // Increment the clicked card count
+
             clickedCardCount++;
 
-            // Check if three cards are clicked, then reveal the selected cards
+            // Als 3 kaarten zijn geklikt, onthul de geselecteerde kaarten na een vertraging
             if (clickedCardCount === 3) {
-                // Wait for 1 second before triggering revealSelectedCards
+
                 setTimeout(revealSelectedCards, 1000);
             }
 
-            // Reset the translation and transition properties after animation
+            // Voeg een luisteraar toe voor het resetten van de transformatie na de animatie        
             card.addEventListener('transitionend', function resetTransform() {
                 card.style.transform = 'translateY(0)';
-                card.style.transition = ''; // Reset transition property after animation
+                card.style.transition = '';
                 card.removeEventListener('transitionend', resetTransform);
             }, { once: true });
         }
 
 
-
+        // Functie om de geselecteerde kaarten te onthullen na het klikken van 3 kaarten
         function revealSelectedCards() {
-            // Hide the heading and the card deck
+            // Verberg overbodige elementen
             document.querySelector('.Decktxt').style.display = 'none';
             document.getElementById('cardDeck').style.display = 'none';
             document.querySelector('h1').style.display = 'none';
-            // Add a class to hide the disappearing text
             document.getElementById('disappearingText').classList.add('hidden');
             hideText();
 
-            // References to the card elements
+            // Elementen voor de verleden, huidige en toekomstige kaarten
             var pastCard = document.getElementById("pastCard");
             var presentCard = document.getElementById("presentCard");
             var futureCard = document.getElementById("futureCard");
 
-            // Randomly select three cards from the Major Arcana deck
+            // Krijg 3 willekeurige kaarten uit de belangrijkste Arcana  
             selectedCards = getRandomCards(majorArcanaCards, 3);
 
-            // Remove any previously added animation classes
+            // Verwijdered 'reveal'-klasse om de animatie opnieuw toe te passen
             pastCard.classList.remove("reveal");
             presentCard.classList.remove("reveal");
             futureCard.classList.remove("reveal");
 
-            // Set display property to "inline-block" at the beginning
+            // Maakt de kaarten zichtbaar
             pastCard.style.display = "inline-block";
             presentCard.style.display = "inline-block";
             futureCard.style.display = "inline-block";
 
-            // Display cards with a delay after clicking the button
+            // Voeg animatie toe aan de verleden,heden en toekomst kaarten en vul de afbeelding in na een vertraging     
             setTimeout(() => {
                 pastCard.classList.add("reveal");
                 fillIMG(pastCard, 0);
@@ -809,64 +794,104 @@
                 futureCard.classList.add("reveal");
                 fillIMG(futureCard, 2);
 
-                // Display the reading text below the revealed cards
+
                 displayReadingText();
             }, 7000);
 
-            // Reset the selectedCardCount for future clicks
+            // Reset het aantal geselecteerde kaarten
             selectedCardCount = 0;
 
-            // Reset the selected class for each card
+            // Verwijder de 'selected'-klasse van alle kaarten
             document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'));
         }
 
 
-
+        // Functie om willekeurige kaarten uit de array te krijgen
         function getRandomCards(cardsArray, num) {
-            // Array door elkaar schudden en de eerste 'num' kaarten selecteren
+
             var shuffledCards = cardsArray.sort(() => Math.random() - 0.5);
             return shuffledCards.slice(0, num);
         }
 
+        // Functie om de afbeelding en beschrijving in een kaartDIV in te vullen
         function fillIMG(cardDIV, index) {
-            cardDIV.querySelector("img").src = selectedCards[index].image + ".jpg";
+            cardDIV.querySelector("img").src = selectedCards[index].cardnr + ".jpg";
             cardDIV.querySelector("p").innerText = selectedCards[index].description;
         }
 
-        function displayReadingText() {
-            // Reference to the div element for reading text
+        // Asynchrone functie om de tekst van de kaartlezing weer te geven     
+        async function displayReadingText() {
             var readingTextDiv = document.getElementById('readingText');
 
-            // You can customize the reading text based on the selected cards
-            // For example, you can use the selectedCards array to get descriptions
-            // and create a meaningful reading.
+            // Krijg de kaartnummers voor de API-aanvraag
+            var cardnumbers = selectedCards.map(card => card.cardnr).join(",");
 
-            // For demonstration, let's concatenate the descriptions of the selected cards
-            var reading = "Your reading: " +
-                selectedCards.map(card => card.description).join(", ");
+            // Voert een asynchrone API-aanvraag uit om de kaartlezingstekst te verkrijgen
+            var tarotAPIResponse = await makeTarotAPIRequest(cardnumbers);
 
-            // Update the content of the reading text div
-            readingTextDiv.innerText = reading;
-            readingTextDiv.style.transition = 'opacity 70s ease';
-            readingTextDiv.style.textShadow = '4px 4px 8px rgba(0, 0, 0, 0.5)';
+            // de kaartlezingstekst in het bijbehorende DIV-element 
+            readingTextDiv.innerHTML = tarotAPIResponse.choices[0].message.content;
 
-            // Check if the screen width is less than or equal to 767px (mobile size)
-            if (window.innerWidth <= 767) {
-                readingTextDiv.style.marginTop = '-100px';  // Adjusted value for mobile
-                readingTextDiv.style.fontSize = '10px';
-                readingTextDiv.style.background = 'url(\'weqweqweqweqwqe.gif\')';
-                readingTextDiv.style.backgroundSize = 'cover';
-                readingTextDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.55)';
-                readingTextDiv.style.color = 'transparent';
-                readingTextDiv.style.webkitBackgroundClip = 'text';
-                readingTextDiv.style.backgroundClip = 'text';
-                readingTextDiv.style.animation = 'gradientAnimation 120s linear infinite';
-            } else {
-                // Styles for larger screens (if needed)
-                readingTextDiv.style.marginTop = '-300px';
-                readingTextDiv.style.fontSize = '40px';
-                // Add additional styles for larger screens if necessary
+
+        }
+
+        // Asynchrone functie om een API-aanvraag naar de tarot-API te maken
+        async function makeTarotAPIRequest(cardnumbers) {
+            return (
+                {
+                    "id": "chatcmpl-8fm1yRUWMOhyahNoUMtbq2hFWdPZ1",
+                    "object": "chat.completion",
+                    "created": 1704966770,
+                    "model": "gpt-4-0613",
+                    "choices": [
+                        {
+                            "index": 0,
+                            "message": {
+                                "role": "assistant",
+                                "content": "De Magiër, de Dood, de Maan, deze kaarten vertellen een fascinerend verhaal. De Magiër symboliseert vaardigheid, inzet en initiatief. Het kan aangeven dat je in een periode van je leven bent waarin je nieuwe dingen wilt beginnen of nieuwe vaardigheden wilt leren. De Dood daarentegen, moet niet letterlijk worden genomen. Het betekent het einde van een cyclus en het begin van iets anders. Het geeft plotselinge, onvermijdelijke veranderingen aan. Tenslotte, de Maan, die dromen, illusies en het onbewuste vertegenwoordigt. Het suggereert dat je misschien niet het volledige beeld ziet in een bepaalde situatie of dat je te maken hebt met onzekerheid. Zo, het pad van verandering en onzekerheid ligt voor je, geleid door de ambities van de Magiër."
+                            },
+                            "logprobs": null,
+                            "finish_reason": "stop"
+                        }
+                    ],
+                    "usage": {
+                        "prompt_tokens": 57,
+                        "completion_tokens": 224,
+                        "total_tokens": 281
+                    },
+                    "system_fingerprint": null
+                });
+
+            // Opstellen van parameters voor de API-aanvraag
+            let parameters = `cards=${cardnumbers}&lang=nl`;
+            let url = 'https://roads-technology.nl/gpt/rt-tarot-api.php?' + parameters;
+            console.log("url:", url);
+            try {
+                var response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+
+                    },
+                    body: JSON.stringify({ prompt: prompt }),
+                });
+
+
+                console.log('API Response:', response);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                return response.json();
+            } catch (error) {
+                console.error('Error making tarot API request:', error.message);
+
             }
+        }
+
+        function yourButtonClickFunction() {
+            location.reload()
         }
 
 
